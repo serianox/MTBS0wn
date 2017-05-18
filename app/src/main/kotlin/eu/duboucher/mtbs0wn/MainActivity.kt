@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar
 import android.view.MotionEvent
 import android.widget.ImageView
 import android.widget.TextView
-import java.util.logging.Logger
 
 class MainActivity:AppCompatActivity() {
   private fun updateReservationCode() {
@@ -32,9 +31,5 @@ class MainActivity:AppCompatActivity() {
     }
 
     return super.onTouchEvent(event)
-  }
-
-  companion object {
-    private val LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME)
   }
 }
