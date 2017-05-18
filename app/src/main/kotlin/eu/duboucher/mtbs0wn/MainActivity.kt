@@ -7,9 +7,10 @@ import android.view.MotionEvent
 import android.widget.ImageView
 import android.widget.TextView
 
-class MainActivity:AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
   private fun updateReservationCode() {
     val _newReservationCode = ReservationCode.createReservationCode()
+
     _newReservationCode.updateTextView(findViewById(R.id.reservation_code) as TextView)
     _newReservationCode.updateImageView(findViewById(R.id.reservation_qrcode) as ImageView)
   }

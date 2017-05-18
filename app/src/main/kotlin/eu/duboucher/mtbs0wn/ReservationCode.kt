@@ -18,24 +18,8 @@ internal class ReservationCode private constructor() {
   private val _qrcode : Bitmap
 
   init {
-    _string = encodeSerial(Serial.generateSerial())
+    _string = Serial.encodeSerial(Serial.generateSerial())
     _qrcode = generateQRCode()
-  }
-
-  private fun f(v : Int) : String {
-    return "%01d".format(v)
-  }
-
-  private fun f2(v : Int) : String {
-    return "%02d".format(v)
-  }
-
-  private fun f4(v : Int) : String {
-    return "%04d".format(v)
-  }
-
-  private fun encodeSerial(serial : Serial) : String {
-    return "C69070${f4(serial.v1)}04${f(serial.c)}${f4(serial.id)}205${f2(serial.v2)}${f(serial.month)}${f2(serial.day)}"
   }
 
   private fun generateQRCode() : Bitmap {
