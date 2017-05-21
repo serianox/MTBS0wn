@@ -18,7 +18,7 @@ internal class ReservationCode private constructor() {
   private val _qrcode : Bitmap
 
   init {
-    _string = Serial.encodeSerial(Serial.generateSerial())
+    _string = Serial.createNew().encodeAsString()
     _qrcode = generateQRCode()
   }
 

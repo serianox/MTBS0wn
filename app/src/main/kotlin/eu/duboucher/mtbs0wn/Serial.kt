@@ -14,26 +14,26 @@ internal data class Serial constructor(
     val c : Int = 0
   ) {
 
+  private fun f(v : Int) : String {
+    return "%01d".format(v)
+  }
+
+  private fun f2(v : Int) : String {
+    return "%02d".format(v)
+  }
+
+  private fun f4(v : Int) : String {
+    return "%04d".format(v)
+  }
+
+  fun encodeAsString() : String {
+    return "C69070${f4(v1)}04${f(c)}${f4(id)}205${f2(v2)}${f(month)}${f2(day)}"
+  }
+
   companion object {
     private val RANDOM = Random()
 
-    private fun f(v : Int) : String {
-      return "%01d".format(v)
-    }
-
-    private fun f2(v : Int) : String {
-      return "%02d".format(v)
-    }
-
-    private fun f4(v : Int) : String {
-      return "%04d".format(v)
-    }
-
-    fun encodeSerial(serial : Serial) : String {
-      return "C69070${f4(serial.v1)}04${f(serial.c)}${f4(serial.id)}205${f2(serial.v2)}${f(serial.month)}${f2(serial.day)}"
-    }
-
-    fun generateSerial() : Serial {
+    fun createNew() : Serial {
       return Serial(id = RANDOM.nextInt(10000))
     }
   }
